@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as firebase from 'firebase';
+import { config } from './config'
 
 @Component({
   selector: 'app-root',
@@ -7,13 +8,15 @@ import * as firebase from 'firebase';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  myKey = config['myKey'];
+  myDomain = config['myDomain'];
   title = 'recipeShoppingApp';
   loadedFeature = 'recipe';
 
   ngOnInit() {
     firebase.initializeApp({
-      apiKey: "AIzaSyAJgLD5FCdrMWU5wr66zJ_wxbcdAtYPslk",
-      authDomain: "recipes-2f961.firebaseapp.com"
+      apiKey: this.myKey,
+      authDomain: this.myDomain
     })
   }
   
