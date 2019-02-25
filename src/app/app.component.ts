@@ -8,15 +8,15 @@ import { config } from './config'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  myKey = config['myKey'];
-  myDomain = config['myDomain'];
+  //myKey = configVals.myKey;
+  //myDomain = configVals.myDomain;
   title = 'recipeShoppingApp';
   loadedFeature = 'recipe';
 
   ngOnInit() {
     firebase.initializeApp({
-      apiKey: this.myKey,
-      authDomain: this.myDomain
+      //apiKey: this.myKey,
+      //authDomain: this.myDomain
     })
   }
   
